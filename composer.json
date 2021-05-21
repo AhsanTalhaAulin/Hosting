@@ -12,8 +12,9 @@
     },
     "version": "2.4.2-p1",
     "require": {
-        "magento/product-community-edition": "2.4.2-p1",
-        "magento/composer-root-update-plugin": "~1.1"
+        "harriswebworks/module-core": "^0.1.0",
+        "magento/composer-root-update-plugin": "~1.1",
+        "magento/product-community-edition": "2.4.2-p1"
     },
     "autoload": {
         "exclude-from-classmap": [
@@ -67,14 +68,17 @@
     },
     "minimum-stability": "stable",
     "prefer-stable": true,
-    "repositories": [
-        {
+    "repositories": {
+        "hww-module-core": {
+            "type": "vcs",
+            "url": "git@github.com:harriswebworks/hww-m2-core.git"
+        },
+        "0": {
             "type": "composer",
             "url": "https://repo.magento.com/"
         }
-    ],
+    },
     "extra": {
         "magento-force": "override"
     }
 }
-

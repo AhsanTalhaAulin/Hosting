@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4aa5d7394e1110473c163e11c8d36072",
+    "content-hash": "7ad45a951209dc4f2845d9b4993c5d65",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -1959,6 +1959,48 @@
                 "source": "https://github.com/guzzle/psr7/tree/1.8.2"
             },
             "time": "2021-04-26T09:17:50+00:00"
+        },
+        {
+            "name": "harriswebworks/module-core",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/harriswebworks/hww-m2-core.git",
+                "reference": "a7dedd942c8eb2804526eaf91f893502ad72fcd6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/harriswebworks/hww-m2-core/zipball/a7dedd942c8eb2804526eaf91f893502ad72fcd6",
+                "reference": "a7dedd942c8eb2804526eaf91f893502ad72fcd6",
+                "shasum": ""
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Harriswebworks\\Core\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Enamul Haque",
+                    "email": "emirajbbd@gmail.com",
+                    "company": "Harris Web Works"
+                }
+            ],
+            "description": "Harriswebworks Core module for Magento 2 extensions.",
+            "homepage": "https://www.harriswebworks.com",
+            "support": {
+                "source": "https://github.com/harriswebworks/hww-m2-core/tree/0.1.0",
+                "issues": "https://github.com/harriswebworks/hww-m2-core/issues"
+            },
+            "time": "2019-10-30T23:02:27+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
