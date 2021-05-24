@@ -1,0 +1,29 @@
+<?php if ($block->isActiveExtension() == 1) { ?>
+<?php $data = $block->getSlider(); ?>
+	 <!-- Slider area Start-->
+        <div class="slider-area owl-carousel">
+		<?php foreach ($data as $item) {  ?>
+            <div class="single-slider slider-1" style = "background-image: url(<?php echo $block->getImageUrl($item->getImage()); ?>);">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="slider-content">
+                                <?php echo $item->getContent(); ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			<?php } ?>
+        </div>
+        <!-- Slider area End-->
+    <script type="text/javascript">
+   (function () {
+     require(["jquery","owlcarousel"],function($){
+       $(document).ready(function(){$('.slider-area').owlCarousel({
+        loop:true,autoplay:true,margin:10,nav:true,lazyLoad:true,
+        responsive:{0:{items:1},600:{items:1},1000:{items:1}}
+    });});});})();
+    </script>
+<?php
+}?>

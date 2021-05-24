@@ -1,0 +1,67 @@
+<?php if ($block->isActiveExtension() == 1) { ?>
+
+    <?php 
+    $data = $block->getSlider();
+    $banners = $block->getBannerCollection();
+    $sliderId = $block->getSliderId();
+    //print_r($data->getData());
+    ?>
+    <!-- Slider area Start-->
+
+    <div class="wrapper_slider slider_<?php echo $sliderId; ?>">
+        <div class="row">
+            <div class="owl">
+            <?php foreach($data as $item){ ?>
+                <div class="banner_item">
+                <?php
+                $imgUrl = $block->getImageUrl($item->getImage());
+                $html = '<img alt="' . $item->getName() . '" src="'. $imgUrl . '" />';
+                if($link = $item->getClick_url())
+                    $html = '<a href="'. $link .'">' . $html . '</a>' ; 
+                echo $html;
+                ?>
+                <?php if($item->getContent()){
+                    echo $item->getContent();
+                }
+                ?>
+                </div>
+            <?php } ?>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        (function () {
+            require(["jquery", "owlcarousel"], function ($) {
+                $(document).ready(function () {
+
+                    $('.slider_<?php echo $sliderId; ?> .owl').owlCarousel({
+                        <?php
+                            foreach($banners as $banner){
+                            $autoplay = $banner->getSlider_autoplay();
+                            $nav = $banner->getSlider_nav();
+                            $dots = $banner->getSlider_dots();
+                            $hoverpause = $banner->getAutoplayhoverpause();
+                            $lazyload = $banner->getSlider_lazyLoad();
+                        ?>
+                        loop: true,
+                        autoplay: <?php if($autoplay == 1){ echo 'true'; } else { echo 'false'; } ?>,
+                        autoplayHoverPause: <?php if($hoverpause == 1){ echo 'true'; } else { echo 'false'; } ?>,
+                        margin: 0,
+                        nav: <?php if($nav == 1){ echo 'true'; } else { echo 'false'; } ?>,
+                        navText:["<img src='<?php echo $this->getViewFileUrl('Harriswebworks_Slider::images/left-arrow.png'); ?>'>","<img src='<?php echo $this->getViewFileUrl('Harriswebworks_Slider::images/right-arrow.png'); ?>'>"],
+                        dots: <?php if($dots == 1){ echo 'true'; } else { echo 'false'; } ?>,
+                        lazyLoad: <?php if($lazyload == 1){ echo 'true'; } else { echo 'false'; } ?>,
+                        responsiveClass:true,
+                        responsive: {
+                            0: {items: 1},
+                            600: {items: 1},
+                            1000: {items: 1}
+                        }
+                    <?php } ?>
+                    });                    
+                });
+            });
+        })();
+    </script>
+<?php } ?>

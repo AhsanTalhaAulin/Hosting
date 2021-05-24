@@ -1,0 +1,28 @@
+{
+    "name": "harriswebworks/module-slider",
+    "description": "Harriswebworks Slider module for Magento 2 to display Slideshow or Banner Image on pages.",
+    "type": "magento2-module",
+    "version": "1.0.2",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "authors": [{
+            "name": "Enamul Haque",
+            "email": "emirajbbd@gmail.com",
+            "company": "Harris Web Works"
+        }
+    ],
+    "homepage": "https://www.harriswebworks.com",
+    "require": {
+        "harriswebworks/module-core": ">=0.1.0"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Harriswebworks\\Slider\\": ""
+        }
+    }
+}

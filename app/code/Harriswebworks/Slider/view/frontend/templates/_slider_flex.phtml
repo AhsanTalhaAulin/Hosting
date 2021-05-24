@@ -1,0 +1,39 @@
+<?php if ($block->isActiveExtension() == 1) { ?>
+
+    <?php 
+    $data = $block->getSlider(); 
+    //print_r($data->getData());
+    ?>
+    <!-- Slider area Start-->
+    <div class="flexslider">
+        <ul class="slides">
+        <?php foreach ($data as $item) { ?>
+            <li class="single-slider slider-1">
+                <img src="<?php echo $block->getImageUrl($item->getImage()); ?>" />
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="slider-content">
+                                <?php echo $item->getContent(); ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        <?php } ?>
+        </ul>
+    </div>
+    <!-- Slider area End-->
+    <script type="text/javascript">
+        (function () {
+            require(["jquery", "flexslider"], function ($) {
+                $(document).ready(function () {
+//                   alert( $(".slider-area > div").length);
+                    $('.flexslider').flexslider({
+                        animation: "slide"
+                      });
+                });
+            });
+        })();
+    </script>
+<?php } ?>

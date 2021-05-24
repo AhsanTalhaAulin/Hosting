@@ -1,0 +1,48 @@
+<?php if ($block->isActiveExtension() == 1) { ?>
+    <?php
+    $data = $block->getSlider();
+//$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+//$store = $objectManager->get('Magento\Store\Model\StoreManagerInterface')->getStore();
+//$mediaUrl = $store->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
+    $sizesarray = array(320, 360, 480, 600, 800, 900, 1024, 1200, 1366);
+    $sizes = '';
+    foreach ($sizesarray as $s) {
+        $sizes .= '(max-width: ' . $s . 'px) ' . $s . 'px,';
+    }
+    $sizes = trim($sizes, ',');
+    ?>
+    <!-- Banner area Start-->
+    <?php
+    $i = 0;
+    foreach ($data as $item) {
+        $imgstr = '';
+        foreach ($sizesarray as $s) {
+            $imgstr .= $block->getImageUrl(str_replace('.jpg', '_' . $s . '.jpg', $item->getImage())) . " " . $s . "w,";
+        }
+        $imgstr .= $block->getImageUrl($item->getImage());
+        ?>
+        <div class="about-banner">
+            <img src="<?php echo $block->getImageUrl($item->getImage()); ?>" width="1600" height="722" sizes="<?php echo $sizes; ?>"
+                 srcset="<?php echo $imgstr; ?>" alt="image">
+            <div class="about-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+        <?php echo $item->getContent(); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php
+        if ($i == 0) {
+            break;
+        }
+        $i++;
+    }
+    ?>
+    <!-- Banner area End-->
+
+    <?php
+}
+?>

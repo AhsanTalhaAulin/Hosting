@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Harriswebworks_Slider add row layout
+ * @category    Harriswebworks
+ * @package     Harriswebworks_Slider
+ * @author      Harriswebworks Dhaka
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="hww_slider_slide_edit"/>
+</page>

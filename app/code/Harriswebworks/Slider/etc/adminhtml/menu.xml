@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Harriswebworks_Slider::hww_slider" title="Slider" module="Harriswebworks_Slider" sortOrder="10" resource="Harriswebworks_Slider::hww_slider" parent="Harriswebworks_Core::all"/>
+		
+        <add id="Harriswebworks_Slider::slider" title="Manage Slider" module="Harriswebworks_Slider" sortOrder="10" action="hww_slider/slider" resource="Harriswebworks_Slider::slider" parent="Harriswebworks_Slider::hww_slider"/>
+        <add id="Harriswebworks_Slider::slide" title="Manage Slide" module="Harriswebworks_Slider" sortOrder="20" action="hww_slider/slide" resource="Harriswebworks_Slider::slide" parent="Harriswebworks_Slider::hww_slider"/>
+        <add id="Harriswebworks_Slider::slider_configuration" title="Configuration" module="Harriswebworks_Slider" sortOrder="30" parent="Harriswebworks_Slider::hww_slider" action="adminhtml/system_config/edit/section/hww_slider" resource="Harriswebworks_Slider::hww_slider_configuration"/>
+    </menu>
+</config>
+
+

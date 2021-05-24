@@ -1,0 +1,11 @@
+.admin__menu .item-hww-slider.level-0 > a:before {
+     content:url('../images/logo.png')
+}
+.admin__menu .item-hww-slider .submenu-title{
+    font-size: 2.0rem;
+}
+.admin__menu .submenu .item-hww-slider .parent .submenu-group-title {
+    display: block!important;
+}
+
+

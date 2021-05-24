@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<head>
+    <css src="Harriswebworks_Slider::css/owl.carousel.min.css"/>
+		<css src="Harriswebworks_Slider::css/owl.theme.default.min.css"/>
+    <css src="Harriswebworks_Slider::css/slider.custom.css"/>
+   </head>
+   <body>
+   	<referenceContainer name="page.wrapper">
+	    <container name="banner_slider" as="banner.slider" label="Banner Slider" htmlTag="div" htmlClass="banner-slider" htmlId="banner-slider" before="main.content">
+	        <block class="Harriswebworks\Slider\Block\Slider" name="slider_index_slider" template="Harriswebworks_Slider::slider.phtml" ifconfig="hww_slider/general/enable" />
+	    </container>
+	</referenceContainer>
+
+
+    <!--<referenceContainer name="page.wrapper">
+        <block class="Harriswebworks\Slider\Block\Slider" name="slider_index_slider" template="Harriswebworks_Slider::slider.phtml" ifconfig="hww_slider/general/enable" after="header.container" />
+    </referenceContainer>-->
+	</body>
+</page>
