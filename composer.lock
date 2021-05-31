@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cfe44534d1a8a4b45b7e9fe72b0c2cf2",
+    "content-hash": "7ad45a951209dc4f2845d9b4993c5d65",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -284,16 +284,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.183.3",
+            "version": "3.183.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "b790a4cea9592a7df51da3a4affde0945248c24d"
+                "reference": "4bf2caf137d027328576bcbebc341dbd7ff21b85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/b790a4cea9592a7df51da3a4affde0945248c24d",
-                "reference": "b790a4cea9592a7df51da3a4affde0945248c24d",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/4bf2caf137d027328576bcbebc341dbd7ff21b85",
+                "reference": "4bf2caf137d027328576bcbebc341dbd7ff21b85",
                 "shasum": ""
             },
             "require": {
@@ -368,9 +368,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.183.3"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.183.4"
             },
-            "time": "2021-05-21T18:14:34+00:00"
+            "time": "2021-05-24T18:15:59+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -2003,51 +2003,6 @@
             "time": "2019-10-30T23:02:27+00:00"
         },
         {
-            "name": "harriswebworks/module-slider",
-            "version": "1.0.2",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:harriswebworks/slider.git",
-                "reference": "7f8bb5b3c1b3d2b8de59985ed6af3ac2e423899d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/harriswebworks/slider/zipball/7f8bb5b3c1b3d2b8de59985ed6af3ac2e423899d",
-                "reference": "7f8bb5b3c1b3d2b8de59985ed6af3ac2e423899d",
-                "shasum": ""
-            },
-            "require": {
-                "harriswebworks/module-core": ">=0.1.0"
-            },
-            "type": "magento2-module",
-            "autoload": {
-                "files": [
-                    "registration.php"
-                ],
-                "psr-4": {
-                    "Harriswebworks\\Slider\\": ""
-                }
-            },
-            "license": [
-                "OSL-3.0",
-                "AFL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "Enamul Haque",
-                    "email": "emirajbbd@gmail.com",
-                    "company": "Harris Web Works"
-                }
-            ],
-            "description": "Harriswebworks Slider module for Magento 2 to display Slideshow or Banner Image on pages.",
-            "homepage": "https://www.harriswebworks.com",
-            "support": {
-                "source": "https://github.com/harriswebworks/slider/tree/1.0.2",
-                "issues": "https://github.com/harriswebworks/slider/issues"
-            },
-            "time": "2021-05-19T10:53:36+00:00"
-        },
-        {
             "name": "justinrainbow/json-schema",
             "version": "5.2.10",
             "source": {
@@ -3326,16 +3281,16 @@
         },
         {
             "name": "laminas/laminas-filter",
-            "version": "2.11.0",
+            "version": "2.11.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-filter.git",
-                "reference": "dd295a15f5c13d0c13d69ca0107190b1f2083d91"
+                "reference": "671724e163aa75c210e94d12b77a0f3f8240d4b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-filter/zipball/dd295a15f5c13d0c13d69ca0107190b1f2083d91",
-                "reference": "dd295a15f5c13d0c13d69ca0107190b1f2083d91",
+                "url": "https://api.github.com/repos/laminas/laminas-filter/zipball/671724e163aa75c210e94d12b77a0f3f8240d4b2",
+                "reference": "671724e163aa75c210e94d12b77a0f3f8240d4b2",
                 "shasum": ""
             },
             "require": {
@@ -3404,7 +3359,7 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2021-03-16T14:37:02+00:00"
+            "time": "2021-05-24T18:29:02+00:00"
         },
         {
             "name": "laminas/laminas-form",

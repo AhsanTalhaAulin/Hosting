@@ -184,8 +184,8 @@
         display: none;
     }
     .wrapper_slider .banner_item .banner_content{
-        max-width: 650px;
         padding: 0 20%;
+        /*max-width: 650px;*/
     }
 
 }
