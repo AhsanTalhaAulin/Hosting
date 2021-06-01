@@ -407,19 +407,51 @@
 
 
 & when (@media-common = true) {
+    .page-header{
+        .panel.wrapper{
+            background-color: @theme-color;
+        }
+    }
     .hww-contact-links {
         padding: 0;
         margin: 0;
         display: inline-block;
+        vertical-align: middle;
 
 
         li {
             list-style: none;
             float: left;
             margin-right: 5px;
+            margin-bottom: 0;
+
+            color: #fff;
+            a{
+                color: #fff;
+            }
+
             .fa {
                 margin-right: 5px;
             }
         }
     }
+
+
+
+    .header{
+        &.panel {
+            > .header{
+                &.links {
+                    > li {
+                        a{
+                            color: @color-white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
 }

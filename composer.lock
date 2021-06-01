@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7ad45a951209dc4f2845d9b4993c5d65",
+    "content-hash": "cfe44534d1a8a4b45b7e9fe72b0c2cf2",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -2001,6 +2001,51 @@
                 "issues": "https://github.com/harriswebworks/hww-m2-core/issues"
             },
             "time": "2019-10-30T23:02:27+00:00"
+        },
+        {
+            "name": "harriswebworks/module-slider",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:harriswebworks/slider.git",
+                "reference": "7f8bb5b3c1b3d2b8de59985ed6af3ac2e423899d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/harriswebworks/slider/zipball/7f8bb5b3c1b3d2b8de59985ed6af3ac2e423899d",
+                "reference": "7f8bb5b3c1b3d2b8de59985ed6af3ac2e423899d",
+                "shasum": ""
+            },
+            "require": {
+                "harriswebworks/module-core": ">=0.1.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Harriswebworks\\Slider\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Enamul Haque",
+                    "email": "emirajbbd@gmail.com",
+                    "company": "Harris Web Works"
+                }
+            ],
+            "description": "Harriswebworks Slider module for Magento 2 to display Slideshow or Banner Image on pages.",
+            "homepage": "https://www.harriswebworks.com",
+            "support": {
+                "source": "https://github.com/harriswebworks/slider/tree/1.0.2",
+                "issues": "https://github.com/harriswebworks/slider/issues"
+            },
+            "time": "2021-05-19T10:53:36+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
