@@ -8,8 +8,6 @@
         <referenceBlock name="header" remove="true"/>
         <referenceBlock name="advanced-search-link" remove="true"/>
 
-        
-        
         <referenceContainer name="header.panel">
             <block class="Magento\Cms\Block\Block" name="hww-contact-links" before="-"> 
                 <arguments> 
