@@ -1,29 +1,27 @@
+& when (@media-common =true) {
 
-
-& when (@media-common = true) {
-
-    .block-title{
+    .block-title {
         color: @title-color;
         text-align: center;
-        margin:20px  0;
+        margin: 20px 0;
     }
 
     .features-area {
         padding: 25px 0px;
-        
-        .feature-content{
-            h4{
+
+        .feature-content {
+            h4 {
                 font-size: 22px;
                 line-height: 26px;
                 font-weight: 600;
                 margin: 25px 0;
 
-                i.fa.fa-server{
+                i.fa.fa-server {
                     color: @title-color;
                 }
             }
 
-            p{
+            p {
                 padding: 20px 0px;
                 font-size: 16px;
                 line-height: 20px;
@@ -33,18 +31,42 @@
 
     }
 
+    .wordpress-bg {
+        background-image: url("../images/magento.png");
+        padding-top: 2%;
+        height: 250px;
+        width: 100%;
+
+        text-align: center;
+
+        h2 {
+
+            color: #fff;
+        }
+
+        .btn-banner {
+            background-color: #1e8cb9;
+            color: white;
+            font-weight: bold;
+        }
+
+
+    }
+
+
+
 
 }
 
 
 
-.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
     .features-area {
         padding: 80px 0px;
 
-        .feature-content{
+        .feature-content {
 
-            p{
+            p {
                 padding: 50px 0px;
             }
         }
