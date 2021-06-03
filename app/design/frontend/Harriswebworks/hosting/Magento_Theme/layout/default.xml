@@ -11,7 +11,7 @@
         
         
         <referenceContainer name="header.panel">
-            <block class="Magento\Cms\Block\Block" name="hww-contact-links" before="-"> 
+            <block class="Magento\Cms\Block\Block" name="contact-links" before="-"> 
                 <arguments> 
                     <argument name="block_id" xsi:type="string">hww-contact-links</argument> 
                 </arguments> 
