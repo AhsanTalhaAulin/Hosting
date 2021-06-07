@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cfe44534d1a8a4b45b7e9fe72b0c2cf2",
+    "content-hash": "70cba166bd184bb764b2f58a5fe0e901",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -2001,6 +2001,44 @@
                 "issues": "https://github.com/harriswebworks/hww-m2-core/issues"
             },
             "time": "2019-10-30T23:02:27+00:00"
+        },
+        {
+            "name": "harriswebworks/module-menumanager",
+            "version": "0.2.0",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:harriswebworks/hww-module-menumanager.git",
+                "reference": "acc33f14bd40263c10652dea9553f5ef5665819d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/harriswebworks/hww-module-menumanager/zipball/acc33f14bd40263c10652dea9553f5ef5665819d",
+                "reference": "acc33f14bd40263c10652dea9553f5ef5665819d",
+                "shasum": ""
+            },
+            "require": {
+                "harriswebworks/module-core": ">=0.1.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Harriswebworks\\Menumanager\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "Harriswebworks Simple Menu Manager for Magento 2",
+            "homepage": "https://www.harriswebworks.com",
+            "support": {
+                "source": "https://github.com/harriswebworks/hww-module-menumanager/tree/0.2.0",
+                "issues": "https://github.com/harriswebworks/hww-module-menumanager/issues"
+            },
+            "time": "2021-03-05T22:01:01+00:00"
         },
         {
             "name": "harriswebworks/module-slider",
