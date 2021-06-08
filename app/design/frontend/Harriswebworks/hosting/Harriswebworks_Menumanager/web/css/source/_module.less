@@ -1,11 +1,29 @@
 /*
- * Filename: /var/www/hosting/public_html/app/design/frontend/Harriswebworks/hosting/Harriswebworks_menumanager/view/frontend/web/css/source/_module.less
- * Path: /var/www/hosting/public_html
- * Created Date: Monday, June 7th 2021, 2:44:19 pm
- * Author: Aulin
- * 
- * Copyright (c) 2021 Your Company
- */
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : Jan 21, 2021, 12:46:35 PM
+    Author     : sadekul
+*/
+
+& when (@media-common = true) {
+    // .navigation .level0 > .level-top {
+    //     color: #fff;
+    //     line-height: 53px;
+    // }
+    .main-menu{
+            .level0{
+                &> .level-top {
+                    color: #fff !important;
+                    line-height: 53px ;
+                }
+            }
+    }
+}
+
+
 
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m){

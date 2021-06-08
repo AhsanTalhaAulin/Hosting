@@ -1,24 +1,20 @@
-	
-
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <head>
-            
-    </head>
+    <head></head>
     <body>
-        <referenceBlock name="header" remove="true"/>
-        <referenceBlock name="advanced-search-link" remove="true"/>
+        <referenceBlock name="header" remove="true" />
+        <referenceBlock name="advanced-search-link" remove="true" />
+        <referenceBlock name="footer_links" remove="true" />
 
-        
-        
+
         <referenceContainer name="header.panel">
-            <block class="Magento\Cms\Block\Block" name="contact-links" before="-"> 
-                <arguments> 
-                    <argument name="block_id" xsi:type="string">hww-contact-links</argument> 
-                </arguments> 
-            </block> 
+            <block class="Magento\Cms\Block\Block" name="contact-links" before="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">hww-contact-links</argument>
+                </arguments>
+            </block>
         </referenceContainer>
-        
-        
+
+
         <referenceBlock name="logo">
             <arguments>
                 <argument name="logo_file" xsi:type="string">images/main_logo.png</argument>
@@ -27,6 +23,40 @@
                 <argument name="logo_alt" xsi:type="string">Logo name</argument>
             </arguments>
         </referenceBlock>
-        
+
+
+        <referenceContainer name="footer">
+            <!-- <block class="Magento\Framework\View\Element\Template" name="footer.navigation.menu" template="Magento_Theme::footer_menu.phtml" before='-' />-->
+            <container name="footer-links" htmlTag="div" htmlClass="row">
+
+                <container name="footer-link-list-1" htmlTag="div" htmlClass="col-md-3">
+                    <block class="Harriswebworks\Menumanager\Block\Menu" name="hww-footer-menu-1" template="html/footer-menu.phtml" ttl="3600">
+                        <arguments>
+                            <argument name="identifier" xsi:type="string">hww-footer-menu-1</argument>
+                        </arguments>
+                    </block>
+                </container>
+
+                <container name="footer-link-list-2" htmlTag="div" htmlClass="col-md-3">
+                    <block class="Harriswebworks\Menumanager\Block\Menu" name="hww-footer-menu-2" template="html/footer-menu.phtml" ttl="3600">
+                        <arguments>
+                            <argument name="identifier" xsi:type="string">hww-footer-menu-2</argument>
+                        </arguments>
+                    </block>
+                </container>
+
+
+            </container> 
+
+            <!-- <container name="hww-footer-quicklinks" htmlTag="div" htmlClass="col-md-4 col-sm-4">
+                <block class="Harriswebworks\Menumanager\Block\Menu" name="footer-customer-service" template="Harriswebworks_Menumanager::html/footer-menu.phtml">
+                    <arguments>
+                        <argument name="identifier" xsi:type="string">hww-footer-menu-1</argument>
+                    </arguments>
+                </block>
+            </container> -->
+
+        </referenceContainer>
+
     </body>
 </page>
