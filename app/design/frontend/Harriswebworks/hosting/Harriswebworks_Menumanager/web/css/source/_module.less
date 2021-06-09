@@ -8,57 +8,128 @@ and open the template in the editor.
     Author     : sadekul
 */
 
-& when (@media-common = true) {
+& when (@media-common =true) {
     // .navigation .level0 > .level-top {
     //     color: #fff;
     //     line-height: 53px;
     // }
-    .main-menu{
-            .level0{
-                &> .level-top {
-                    color: #fff !important;
-                    line-height: 53px ;
+
+    .footer-logo {
+        float: left;
+        margin: 15px 0 50px 30%;
+        /* max-width: 50%; */
+        /* position: relative; */
+        z-index: 5;
+    }
+
+
+
+    .main-menu {
+        .level0 {
+            &>.level-top {
+                color: #fff !important;
+                line-height: 53px;
+            }
+        }
+    }
+
+    .hww-footer-menu-1 {
+        padding-left: 0px;
+    }
+
+    .navigation {
+        &.footer-menu {
+            padding-left: -15px;
+
+            .title {
+                display: none;
+            }
+
+
+
+            ul {
+                .level0 {
+                    display: block;
+
+                    .level-top {
+                        line-height: 26px;
+                        font-weight: 400;
+                        border-style: none;
+                    }
+
+                    &.nav-1 {
+                        a {
+                            font-weight: 700;
+                        }
+                    }
+
+                }
+
+
+                li {
+
+                    a {
+                        padding: 0px !important;
+                    }
                 }
             }
+        }
+
     }
+
+    .footer-img{
+        text-align: center;
+        #mni-membership-637376679160663645 .mn-widget-member-logo {
+            max-width: 80px;
+        }
+        img {
+            margin-bottom: 15px;
+        }
+    }
+
+
+
 }
 
 
 
 
-.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m){
-    .navigation{
-        .level0{
-            &.mega{
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+    .navigation {
+        .level0 {
+            &.mega {
                 .submenu {
                     min-width: 750px;
-                    li{
+
+                    li {
                         display: inline-block;
                         vertical-align: top;
-                        &.mega{
+
+                        &.mega {
                             width: 25%;
                         }
-                        .submenu{
+
+                        .submenu {
                             position: unset !important;
                             display: block !important;
                         }
-                        .level1{
-                            &.submenu{
+
+                        .level1 {
+                            &.submenu {
                                 display: inline-block !important;
                                 min-width: 25% !important;
                                 box-shadow: none;
                                 border: none;
-                                
-                                li{
-                                   display: block; 
+
+                                li {
+                                    display: block;
                                 }
                             }
                         }
                     }
                 }
-            } 
+            }
         }
     }
 
 }
-

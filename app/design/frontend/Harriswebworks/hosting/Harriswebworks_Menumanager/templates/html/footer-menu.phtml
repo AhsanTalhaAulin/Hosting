@@ -1,0 +1,18 @@
+<?php ?>
+<?php
+/**
+ * Top menu for store
+ *
+ * @var $block \Harriswebworks\Menumanager\Block\Menu
+ */
+?>
+<?php $columnsLimit = $block->getColumnsLimit() ? $block->getColumnsLimit() : 0; ?>
+<?php $_menu = $block->getHtml('level-top', 'submenu', $columnsLimit) ?>
+<?php if ($_menu) { ?>
+    <nav class="footer-menu navigation" role="navigation" data-action="navigation">
+        <h2 class="title"><?= $this->escapeHtml($block->getTitle()) ?></h2>
+        <ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
+            <?php /* @escapeNotVerified */ echo $_menu; ?>
+        </ul>
+    </nav>
+<?php } ?>

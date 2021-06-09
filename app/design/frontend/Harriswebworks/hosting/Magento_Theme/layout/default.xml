@@ -4,6 +4,7 @@
         <referenceBlock name="header" remove="true" />
         <referenceBlock name="advanced-search-link" remove="true" />
         <referenceBlock name="footer_links" remove="true" />
+        
 
 
         <referenceContainer name="header.panel">
@@ -23,13 +24,21 @@
                 <argument name="logo_alt" xsi:type="string">Logo name</argument>
             </arguments>
         </referenceBlock>
+        
 
 
         <referenceContainer name="footer">
-            <!-- <block class="Magento\Framework\View\Element\Template" name="footer.navigation.menu" template="Magento_Theme::footer_menu.phtml" before='-' />-->
+            <referenceBlock name="report.bugs" remove="true" />.
+            <referenceBlock name="copyright" remove="true" />
+
+
+
+
+
+            <block class="Magento\Framework\View\Element\Template" name="footer.navigation.menu" template="Magento_Theme::footer_logo.phtml" before='-' />
             <container name="footer-links" htmlTag="div" htmlClass="row">
 
-                <container name="footer-link-list-1" htmlTag="div" htmlClass="col-md-3">
+                <container name="footer-link-list-1" htmlTag="div" htmlClass="hww-footer-menu-1 col-md-4">
                     <block class="Harriswebworks\Menumanager\Block\Menu" name="hww-footer-menu-1" template="html/footer-menu.phtml" ttl="3600">
                         <arguments>
                             <argument name="identifier" xsi:type="string">hww-footer-menu-1</argument>
@@ -37,13 +46,27 @@
                     </block>
                 </container>
 
-                <container name="footer-link-list-2" htmlTag="div" htmlClass="col-md-3">
+                <container name="footer-link-list-2" htmlTag="div" htmlClass="col-md-2">
                     <block class="Harriswebworks\Menumanager\Block\Menu" name="hww-footer-menu-2" template="html/footer-menu.phtml" ttl="3600">
                         <arguments>
                             <argument name="identifier" xsi:type="string">hww-footer-menu-2</argument>
                         </arguments>
                     </block>
                 </container>
+
+                <container name="footer-link-list-3" htmlTag="div" htmlClass="col-md-3">
+                    <block class="Harriswebworks\Menumanager\Block\Menu" name="hww-footer-menu-3" template="html/footer-menu.phtml" ttl="3600">
+                        <arguments>
+                            <argument name="identifier" xsi:type="string">hww-footer-menu-3</argument>
+                        </arguments>
+                    </block>
+                </container>
+
+                <container name="footer-image-link" htmlTag="div" htmlClass="footer-img col-md-3">
+                    <block class="Magento\Framework\View\Element\Template" name="footer.partner.logo" template="Magento_Theme::footer_image.phtml" before='-' />
+
+                </container>
+
 
 
             </container> 
