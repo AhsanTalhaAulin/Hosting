@@ -13,6 +13,7 @@
     "version": "2.4.2-p1",
     "require": {
         "harriswebworks/module-core": "^0.1.0",
+        "harriswebworks/module-menumanager": "^0.2.0",
         "harriswebworks/module-slider": "^1.0",
         "magento/composer-root-update-plugin": "~1.1",
         "magento/product-community-edition": "2.4.2-p1"
@@ -70,6 +71,10 @@
     "minimum-stability": "stable",
     "prefer-stable": true,
     "repositories": {
+        "hww-module-menumanager": {
+            "type": "vcs",
+            "url": "git@github.com:harriswebworks/hww-module-menumanager.git"
+        },
         "hww-slider": {
             "type": "vcs",
             "url": "git@github.com:harriswebworks/slider.git"
