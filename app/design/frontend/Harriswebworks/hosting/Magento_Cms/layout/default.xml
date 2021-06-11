@@ -7,8 +7,39 @@
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        
         <referenceBlock name="page.main.title" remove="true"/>
+        <referenceContainer name="content">
+            
+            <block class="Magento\Cms\Block\Block" name="Feature"  before="-"> 
+                <arguments> 
+                    <argument name="block_id" xsi:type="string">hww-feature</argument> 
+                </arguments> 
+
+                </block>
+
+        
+        </referenceContainer>
+
+        <referenceContainer name="page.wrapper">
+            <container name="full-width" htmlTag="div" htmlClass="full-width-content" before="page.bottom.container">
+                <block class="Magento\Cms\Block\Block" name="professionals"  > 
+                    <arguments> 
+                        <argument name="block_id" xsi:type="string">hww-professionals</argument> 
+                    </arguments> 
+                </block>
+    
+            </container>
+
+            <container name="newsletter-section" htmlTag="section" htmlClass="newsletter-section"  after="full-width">
+                <container name="newsletter-container" htmlTag="div" htmlClass="container">
+                    <block class="Magento\Newsletter\Block\Subscribe" name="form.subscribe" template="Magento_Newsletter::subscribe.phtml"  ifconfig="newsletter/general/active"/>
+                </container>
+            </container>
+
+
+
+        </referenceContainer>
+
 
 
     </body>

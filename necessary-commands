@@ -1,0 +1,49 @@
+mysql dump -u magento -pmagento hosting >/var/www/hosting/public_html/hosting.sql
+
+mysql dump -u magento -pmagento hosting >/var/www/hosting/public_html/hosting.sql
+
+grunt clean && grunt exec && grunt less && grunt watch
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="features-area">
+<h2 class="block-title">FEATURES</h2>
+<div class="row">
+<div class="col-sm-4 animate-box feature-content border-right border-bottom" data-animate-effect="fadeIn">
+<h4>Domain Registration</h4>
+<p>Your domain name is your online identity. So we recommend you to choose a domain wisely. Search for the domain and register it by a simple click or transfer your domain to us. Get your website online today.</p>
+</div>
+<div class="col-sm-4 animate-box feature-content border-right border-bottom" data-animate-effect="fadeIn">
+<h4>BD Domain Registration</h4>
+<p>Register BTCL domain from a domain registration company where you can trust and rely. Check dot BD domain whois and availablity using our user friendly BTCL domain checker. We hope you will like this.</p>
+</div>
+<div class="col-sm-4 animate-box feature-content border-bottom" data-animate-effect="fadeIn">
+<h4>Web Hosting in Bangladesh</h4>
+<p>A professional domain &amp; web hosting company in Dhaka, Bangladesh. Get best in class website hosting, reseller hosting, vps server &amp; dedicated server from #1 hosting company. We even help you set up your emails.</p>
+</div>
+<div class="col-sm-4 animate-box feature-content border-right">
+<h4>Websites</h4>
+<p>Our designers, programmers, writers and marketers will create a dynamic website that strengthens your business. Magento, WordPress, Drupal experts.</p>
+</div>
+<div class="col-sm-4 animate-box feature-content border-right">
+<h4>Magento</h4>
+<p>As a Magento-Certified Business Partner, we'll build and manage your site, handling custom extensions, upgrades, back-office integrations, and more.</p>
+</div>
+<div class="col-sm-4 animate-box feature-content">
+<h4>Integrations</h4>
+<p>We'll integrate your existing ERP, CRM, inventory, shipping and accounting software with your website to accelerate growth and improve efficiency.</p>
+</div>
+</div>
+</div>

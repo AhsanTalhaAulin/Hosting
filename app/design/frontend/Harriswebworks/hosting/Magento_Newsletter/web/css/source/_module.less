@@ -1,0 +1,63 @@
+& when (@media-common =true) {
+
+
+
+
+    .newsletter-section {
+        background-color: #1e8cb9;
+        color: white;
+        padding: 35px 0px;
+        text-align: center;
+
+        .block {
+            &.newsletter {
+                /* max-width: 44%; */
+                /* width: max-content; */
+                text-align: center;
+                display: inline-block;
+                margin: 0px;
+                .title{
+                    margin-bottom: 20px;
+                }
+                .content {
+                    text-align: justify;
+                }
+
+                .form.subscribe {
+                    display: block;
+                    width: 100%;
+                }
+
+                .field.newsletter {
+                    max-width: 500px;
+                    display: inline-block;
+
+                    .control {
+                        label {
+                            width: 500px;
+                            #newsletter {
+                                height: 35px;
+                            }
+                   
+                        }
+                    }
+                }
+
+                .actions {
+                    display: inline-block;
+                    // vertical-align: top;
+                    width: 1%;
+                    .action.subscribe.primary {
+                        background-color: rebeccapurple;
+                        border: 1px solid rebeccapurple;
+                        margin-left: -3px;
+                        vertical-align: baseline;
+
+                    }
+                }
+
+            }
+        }
+    }
+
+}
