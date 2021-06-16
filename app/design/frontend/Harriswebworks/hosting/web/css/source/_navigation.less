@@ -13,9 +13,10 @@
 //  Common
 //  _____________________________________________
 
-& when (@media-common = true) {
+& when (@media-common =true) {
 
     .panel.header {
+
         .links,
         .switcher {
             display: none;
@@ -27,12 +28,10 @@
     }
 
     .nav-toggle {
-        .lib-icon-font(
-            @icon-menu,
+        .lib-icon-font(@icon-menu,
             @_icon-font-size: 28px,
             @_icon-font-color: @header-icons-color,
-            @_icon-font-color-hover: @header-icons-color-hover
-        );
+            @_icon-font-color-hover: @header-icons-color-hover );
         .lib-icon-text-hide();
         cursor: pointer;
         display: block;
@@ -46,52 +45,65 @@
 
 
 
-    .main-entry {
+    .container.main-entry {
         padding: 5% 10%;
         background-color: white;
         color: black;
+
+        .service-page-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .one-third,
+        .one-third-last {
+            width: 33%;
+            display: inline-block;
+        }
+
+        .badges-lists {
+            text-align: center;
+            margin: 0 40px 30px 0 !important;
+        }
+
+        .badges-lists li {
+            margin: 0 10px 10px 10px;
+            list-style: none;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .badges-lists li img {
+            margin: 0 auto;
+        }
+
+        .badges-lists.alignright {
+            float: right;
+            margin: 20px 0 30px 30px !important;
+            max-width: 55%;
+        }
+
+        .badges-lists.alignright li {
+            margin: 0 20px 0 0;
+        }
+
+        .badges-lists.alignright li:last-child {
+            margin-right: 0;
+        }
+
+        blockquote {
+            font-style: italic;
+            padding: 25px;
+            font-size: 18px;
+            font-weight: 300;
+            color: #1C1C1C;
+            line-height: 1.5;
+            background: #F1F1F1;
+            margin: 25px 0 20px 0;
+        }
     }
 
-    .service-page-title {
-        text-align: center;
-        margin-bottom: 50px;
-    }
 
-    .one-third,
-    .one-third-last {
-        width: 33%;
-        display: inline-block;
-    }
-
-    .badges-lists {
-        text-align: center;
-        margin: 0 40px 30px 0 !important;
-    }
-
-    .badges-lists li {
-        margin: 0 10px 10px 10px;
-        list-style: none;
-        display: inline-block;
-        vertical-align: middle;
-    }
-
-    .badges-lists li img {
-        margin: 0 auto;
-    }
-
-    .badges-lists.alignright {
-        float: right;
-        margin: 20px 0 30px 30px !important;
-        max-width: 55%;
-    }
-
-    .badges-lists.alignright li {
-        margin: 0 20px 0 0;
-    }
-
-    .badges-lists.alignright li:last-child {
-        margin-right: 0;
-    }
 
 }
 
@@ -99,18 +111,16 @@
 //  Mobile
 //  _____________________________________________
 
-.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
     .navigation {
         padding: 0;
 
         .parent {
             .level-top {
-                .lib-icon-font(
-                    @_icon-font-content: @icon-down,
+                .lib-icon-font(@_icon-font-content: @icon-down,
                     @_icon-font-size: 42px,
                     @_icon-font-position: after,
-                    @_icon-font-display: block
-                );
+                    @_icon-font-display: block);
                 position: relative;
 
                 &:after {
@@ -120,10 +130,8 @@
                 }
 
                 &.ui-state-active {
-                    .lib-icon-font-symbol(
-                        @_icon-font-content: @icon-up,
-                        @_icon-font-position: after
-                    );
+                    .lib-icon-font-symbol(@_icon-font-content: @icon-up,
+                        @_icon-font-position: after);
                 }
             }
         }
@@ -158,12 +166,10 @@
 
         .switcher-trigger {
             strong {
-                .lib-icon-font(
-                    @_icon-font-content: @icon-down,
+                .lib-icon-font(@_icon-font-content: @icon-down,
                     @_icon-font-size: 42px,
                     @_icon-font-position: after,
-                    @_icon-font-display: block
-                );
+                    @_icon-font-display: block);
                 position: relative;
 
                 &:after {
@@ -174,10 +180,8 @@
             }
 
             &.active strong {
-                .lib-icon-font-symbol(
-                    @_icon-font-content: @icon-up,
-                    @_icon-font-position: after
-                );
+                .lib-icon-font-symbol(@_icon-font-content: @icon-up,
+                    @_icon-font-position: after);
             }
         }
 
@@ -209,7 +213,7 @@
                     padding: .8rem @submenu__padding-left;
                 }
 
-                > a {
+                >a {
                     border-top: 1px solid @color-gray82;
                 }
             }
@@ -328,7 +332,7 @@
 //  Desktop
 //  _____________________________________________
 
-.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
     .nav-toggle {
         display: none;
     }
@@ -343,12 +347,12 @@
         display: none;
     }
 
-    .nav-sections-item-content > * {
+    .nav-sections-item-content>* {
         display: none;
     }
 
     .nav-sections-item-content {
-        > .navigation {
+        >.navigation {
             display: block;
         }
     }
@@ -356,6 +360,7 @@
     .lib-main-navigation-desktop();
 
     .panel.header {
+
         .links,
         .switcher {
             display: inline-block;

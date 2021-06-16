@@ -8,6 +8,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="page.main.title" remove="true"/>
+        <referenceBlock name="form.subscribe" remove="false" />
         <referenceContainer name="content">
             
             <block class="Magento\Cms\Block\Block" name="Feature"  before="-"> 
@@ -21,7 +22,7 @@
         </referenceContainer>
 
         <referenceContainer name="page.wrapper">
-            <container name="full-width" htmlTag="div" htmlClass="full-width-content" before="page.bottom.container">
+            <container name="full-width" htmlTag="div" htmlClass="full-width-content" after="Feature">
                 <block class="Magento\Cms\Block\Block" name="professionals"  > 
                     <arguments> 
                         <argument name="block_id" xsi:type="string">hww-professionals</argument> 

@@ -12,6 +12,39 @@
             </block>
         </referenceContainer>
 
+        <move element="logo" destination="header-col1"  before="-"/>
+        <move element="minicart" destination="minicart-section"  before="-"/>
+        <move element="top.search" destination="top-search-section"  before="-" />
+        <move element="store.menu" destination="header-col2-row2"  before="-"/>
+
+        <!-- <move element="top.search" destination="header.panel" /> -->
+
+        <referenceContainer name="header-wrapper">
+            <container name="header-container" htmlTag="div" htmlClass="container" >
+                <container name="header-row" htmlTag="div" htmlClass="row" >
+                    <container name="header-col1" htmlTag="div" htmlClass="col-md-3" />
+                     
+                    <container name="header-col2" htmlTag="div" htmlClass="col-md-9" >
+
+                        <container name="header-col2-row1" htmlTag="div" htmlClass="search-cart" >
+                            <container name="minicart-section"/>
+                            <container name="top-search-section"/>
+
+                        </container>
+                        <container name="header-col2-row2" htmlTag="div" htmlClass="hww-menu" >
+                        
+                        </container>
+                        
+                        
+                    </container>
+
+
+                        
+            </container>
+        </container>
+              
+        </referenceContainer>
+
 
         <referenceBlock name="logo">
             <arguments>
@@ -20,14 +53,26 @@
                 <argument name="logo_height" xsi:type="number">94</argument>
                 <argument name="logo_alt" xsi:type="string">Logo name</argument>
             </arguments>
+
         </referenceBlock>
-        
+
+        <referenceBlock name="store.menu">
+            <block class="Harriswebworks\Menumanager\Block\Menu" name="custom.navigation" template="html/menu.phtml" before="-" ttl="3600">
+                <arguments>
+                    <argument name="identifier" xsi:type="string">hww-menu</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+
+
+
+
 
 
         <referenceContainer name="footer">
-            <referenceBlock name="report.bugs" remove="true" />.
+            <referenceBlock name="report.bugs" remove="true" />
             <referenceBlock name="copyright" remove="true" />
-
+            <referenceBlock name="form.subscribe" remove="true" />
 
 
 
@@ -66,7 +111,7 @@
 
 
 
-            </container> 
+            </container>
 
             <!-- <container name="hww-footer-quicklinks" htmlTag="div" htmlClass="col-md-4 col-sm-4">
                 <block class="Harriswebworks\Menumanager\Block\Menu" name="footer-customer-service" template="Harriswebworks_Menumanager::html/footer-menu.phtml">
