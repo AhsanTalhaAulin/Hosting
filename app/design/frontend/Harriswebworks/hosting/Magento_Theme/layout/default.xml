@@ -12,45 +12,35 @@
             </block>
         </referenceContainer>
 
-        <move element="logo" destination="header-col1"  before="-"/>
-        <move element="minicart" destination="minicart-section"  before="-"/>
-        <move element="top.search" destination="top-search-section"  before="-" />
-        <move element="store.menu" destination="header-col2-row2"  before="-"/>
+        <move element="logo" destination="header-col1" before="-"/>
+        <move element="minicart" destination="minicart-section" before="-"/>
+        <move element="top.search" destination="top-search-section" before="-" />
+        <move element="store.menu" destination="header-col3" before="-"/>
 
         <!-- <move element="top.search" destination="header.panel" /> -->
 
         <referenceContainer name="header-wrapper">
-            <container name="header-container" htmlTag="div" htmlClass="container" >
-                <container name="header-row" htmlTag="div" htmlClass="row" >
-                    <container name="header-col1" htmlTag="div" htmlClass="col-md-3" />
-                     
-                    <container name="header-col2" htmlTag="div" htmlClass="col-md-9" >
-
-                        <container name="header-col2-row1" htmlTag="div" htmlClass="search-cart" >
-                            <container name="minicart-section"/>
-                            <container name="top-search-section"/>
-
-                        </container>
-                        <container name="header-col2-row2" htmlTag="div" htmlClass="hww-menu" >
-                        
-                        </container>
-                        
-                        
+            <container name="header-container" htmlTag="div" htmlClass="container">
+                <container name="header-row" htmlTag="div" htmlClass="row">
+                    <container name="header-col1" htmlTag="div" htmlClass="hww-logo col-md-2" />
+                    
+                    <container name="header-col3" htmlTag="div" htmlClass="hww-menu col-md-6" />
+                    
+                    <container name="header-col2" htmlTag="div" htmlClass="hww-search-cart col-md-4">
+                        <container name="minicart-section"/>
+                        <container name="top-search-section"/>
                     </container>
 
-
-                        
+                </container>
             </container>
-        </container>
-              
+
         </referenceContainer>
 
 
         <referenceBlock name="logo">
             <arguments>
-                <argument name="logo_file" xsi:type="string">images/main_logo.png</argument>
-                <argument name="logo_width" xsi:type="number">356</argument>
-                <argument name="logo_height" xsi:type="number">94</argument>
+                <argument name="logo_width" xsi:type="number">101</argument>
+                <argument name="logo_height" xsi:type="number">25</argument>
                 <argument name="logo_alt" xsi:type="string">Logo name</argument>
             </arguments>
 
