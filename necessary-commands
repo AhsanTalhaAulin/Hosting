@@ -1,4 +1,4 @@
-mysqldump -u magento -pmagento hosting >/var/www/hosting/public_html/hosting.sql
+mysqldump -u magento -pmagento hosting hosting.sql
 
 mysql dump -u magento -pmagento hosting >/var/www/hosting/public_html/hosting.sql
 
