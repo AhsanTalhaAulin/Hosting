@@ -11,7 +11,7 @@
 
         <container name="service-full-width" htmlTag="div" htmlClass="service-full-width" before="-"/>
       
-        <move element="page.wrapper" destination="service-full-width" before="-"/>
+        <move element="page.wrapper" destination="service-full-width" before="-"
 
     
     </body>

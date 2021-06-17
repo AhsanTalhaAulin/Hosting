@@ -1,5 +1,117 @@
 & when (@media-common =true) {
 
+    #sm-client-testimonial {
+        // background-image: url("assets/img/testimonial-bg.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        display: inline;
+        float: left;
+        width: 100%;
+        .sm-overlay {
+            background-color: rgba(0, 0, 0, 0.8);
+            display: inline;
+            float: left;
+            padding: 70px 0 100px;
+            width: 100%;
+            .sm-title {
+                h2 {
+                    color: #fff;
+                }
+            }
+        }
+        .sm-client-testimonial-area {
+            display: inline;
+            float: left;
+            width: 100%;
+            .sm-testimonial-content {
+                display: inline;
+                float: left;
+                width: 100%;
+                .sm-testimonial-slider {
+                    display: inline;
+                    float: left;
+                    width: 100%;
+                    li {
+                        display: inline;
+                        float: left;
+                        width: 100%;
+                        .sm-testimonial-single {
+                            display: inline;
+                            float: left;
+                            padding: 0 150px;
+                            position: relative;
+                            width: 100%;
+                            .sm-testimonial-info {
+                                display: inline;
+                                float: left;
+                                width: 100%;
+                                text-align: center;
+                                p {
+                                    color: #fff;
+                                    font-size: 20px;
+                                    letter-spacing: 0.5px;
+                                    line-height: 35px;
+                                    margin-top: 30px;
+                                    padding: 0;
+                                    position: relative;
+                                    z-index: 20;
+                                    &:before {
+                                        content: '\f10e';
+                                        font-family: fontAwesome;
+                                        font-size: 50px;
+                                        left: 5%;
+                                        position: absolute;
+                                        text-align: end;
+                                        top: 0%;
+                                        // opacity: 0.6;
+                                        width: 100%;
+                                        z-index: -10;
+                                        color: #fff;
+                                    }
+                                }
+                            }
+                            .sm-testimonial-bio {
+                                color: #fff;
+                                // display: inline-block;
+                                float: left;
+                                margin-top: 5px;
+                                margin-bottom: 25px;
+                                position: relative;
+                                text-align: center;
+                                width: 100%;
+                                z-index: 30;
+                                p {
+                                    display: inline-block;
+                                    font-size: 18px;
+                                    font-weight: bold;
+                                    font-family: 'lato';
+                                    letter-spacing: 1px;
+                                    margin-bottom: 0;
+                                    min-width: 175px;
+                                    padding-top: 10px;
+                                }
+                            }
+                        }
+                    }
+                    .slick-dots {
+                        text-align: center;
+                        li {
+                            border-radius: 50%;
+                            width: 20px;
+                            display: inline-block;
+                            float: none;
+                            // @include transition(all 0.5s);
+                            button {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
     .block-title {
         color: @title-color;
         text-align: center;
@@ -68,7 +180,7 @@
 
     }
 
-    .wrapper_slider{
+    .wrapper_slider {
         overflow: hidden;
     }
 

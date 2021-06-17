@@ -7,7 +7,7 @@
 
 use Magento\Framework\App\Action\Action;
 
-/** @var \Magento\CatalogWidget\Block\Product\ProductsList $block */
+/** @var \Magento\CatalogWidget\Block\Product\Test $block */
 ?>
 <?php if ($exist = ($block->getProductCollection() && $block->getProductCollection()->getSize())) : ?>
     <?php
@@ -17,7 +17,6 @@ use Magento\Framework\App\Action\Action;
 
     $image = 'new_products_content_widget_grid';
     $items = $block->getProductCollection()->getItems();
-
     $showWishlist = true;
     $showCompare = true;
     $showCart = true;

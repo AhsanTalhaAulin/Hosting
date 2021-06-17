@@ -6,6 +6,9 @@
  */
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <script src="Magento_Cms/js/testimonial.js"/>
+    </head>
     <body>
         <referenceBlock name="page.main.title" remove="true"/>
         <referenceBlock name="form.subscribe" remove="false" />
@@ -36,7 +39,11 @@
                     <block class="Magento\Newsletter\Block\Subscribe" name="form.subscribe" template="Magento_Newsletter::subscribe.phtml"  ifconfig="newsletter/general/active"/>
                 </container>
             </container>
-
+            <!-- <block class="Magento\Cms\Block\Block" name="Testimonial"  > 
+                <arguments> 
+                    <argument name="block_id" xsi:type="string">hww-testimonial</argument> 
+                </arguments> 
+            </block> -->
 
 
         </referenceContainer>
