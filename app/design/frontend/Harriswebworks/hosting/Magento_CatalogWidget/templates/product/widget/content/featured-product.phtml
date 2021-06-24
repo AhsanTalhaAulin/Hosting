@@ -6,22 +6,39 @@
  */
 
 use Magento\Framework\App\Action\Action;
+use Magento\InventoryLowQuantityNotification\Model\ResourceModel\SourceItemConfiguration\GetData;
 
 /** @var \Magento\CatalogWidget\Block\Product\Test $block */
+// var_dump($block->getProductCollection()-GetData());
+
 ?>
+
 <?php if ($exist = ($block->getProductCollection() && $block->getProductCollection()->getSize())) : ?>
     <?php
+
+
     $type = 'widget-product-grid';
 
     $mode = 'grid';
 
     $image = 'new_products_content_widget_grid';
     $items = $block->getProductCollection()->getItems();
+
     $showWishlist = true;
     $showCompare = true;
     $showCart = true;
     $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
     $description = false;
+
+    function getTextAttributes($attributeName, $value, $unit)
+    {
+        $htmlstr =   '<div class="product name product-item-'. $attributeName . '">' .
+                    $value. ' ' . $unit .
+                    '</div>';
+        return $htmlstr;
+    }
+
+
     ?>
     <div class="block widget block-products-list <?= /* @noEscape */ $mode ?>">
         <?php if ($block->getTitle()) : ?>
@@ -39,13 +56,45 @@ use Magento\Framework\App\Action\Action;
                         <div class="product-item-info">
                             <!-- <a href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>" class="product-item-photo">
                                 <?= $block->getImage($_item, $image)->toHtml() ?>
-                            </a> -->
+                            </a>  -->
                             <div class="product-item-details">
                                 <strong class="product-item-name">
                                     <a title="<?= $block->escapeHtml($_item->getName()) ?>" href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>" class="product-item-link">
                                         <?= $block->escapeHtml($_item->getName()) ?>
                                     </a>
                                 </strong>
+                                <?= getTextAttributes( 'ssd_storage',$block->escapeHtmlAttr($_item->getssd_storage()) , "GB" ); ?>
+                                <?= getTextAttributes( 'monthly_data_transfer',$block->escapeHtmlAttr($_item->getmonthly_data_transfer()) , "GB" ); ?>
+                                <?= getTextAttributes( 'addon_domain',$block->escapeHtmlAttr($_item->getaddon_domain()) , "GB" ); ?>
+
+
+                                <!-- <div class="product name product-item-SsdStorage">
+                                    <?= $block->escapeHtmlAttr($_item->getssd_storage()) ?>
+                                </div>
+                                <div class="product name product-item-MonthlyDataTransfer">
+                                    <?= $block->escapeHtmlAttr($_item->getmonthly_data_transfer()) ?>
+                                </div>
+                                <div class="product name product-item-AddonDomain">
+                                    <?= $block->escapeHtmlAttr($_item->getaddon_domain()) ?>
+                                </div>
+                                <div class="product name product-item-LitespeedWebServer">
+                                    <?php if ($block->escapeHtmlAttr($_item->getlitespeed_web_server())) { ?>
+                                    <?= $block->escapeHtmlAttr($_item->getResource()->getAttribute('litespeed_web_server')->getFrontend()->getLabel($_item));
+                                    } else {
+                                        continue;
+                                    }
+                                    ?>
+                                </div>
+                                <div class="product name product-item-CpanelControlPanel">
+                                    <?php if ($block->escapeHtmlAttr($_item->getcpanel_control_panel())) { ?>
+                                    <?= $block->escapeHtmlAttr($_item->getResource()->getAttribute('cpanel_control_panel')->getFrontend()->getLabel($_item));
+                                    } else {
+                                        continue;
+                                    }
+                                    ?>
+                                </div> -->
+
+
                                 <?php if ($templateType) : ?>
                                     <?= $block->getReviewsSummaryHtml($_item, $templateType) ?>
                                 <?php endif; ?>

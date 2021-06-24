@@ -314,6 +314,7 @@ return [
         'Dotdigitalgroup_Email' => 1,
         'Dotdigitalgroup_Chat' => 1,
         'Dotdigitalgroup_Sms' => 1,
+        'Harriswebworks_AddToCartNotification' => 1,
         'Harriswebworks_Core' => 1,
         'Harriswebworks_Menumanager' => 1,
         'Harriswebworks_Slider' => 1,

@@ -39,11 +39,11 @@
                     <block class="Magento\Newsletter\Block\Subscribe" name="form.subscribe" template="Magento_Newsletter::subscribe.phtml"  ifconfig="newsletter/general/active"/>
                 </container>
             </container>
-            <!-- <block class="Magento\Cms\Block\Block" name="Testimonial"  > 
+            <block class="Magento\Cms\Block\Block" name="Testimonial"  > 
                 <arguments> 
                     <argument name="block_id" xsi:type="string">hww-testimonial</argument> 
                 </arguments> 
-            </block> -->
+            </block>
 
 
         </referenceContainer>
