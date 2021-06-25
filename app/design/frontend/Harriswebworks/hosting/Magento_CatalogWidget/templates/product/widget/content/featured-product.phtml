@@ -6,24 +6,41 @@
  */
 
 use Magento\Framework\App\Action\Action;
+use Magento\InventoryLowQuantityNotification\Model\ResourceModel\SourceItemConfiguration\GetData;
 
 /** @var \Magento\CatalogWidget\Block\Product\Test $block */
+// var_dump($block->getProductCollection()-GetData());
+
 ?>
+
 <?php if ($exist = ($block->getProductCollection() && $block->getProductCollection()->getSize())) : ?>
     <?php
+
+
     $type = 'widget-product-grid';
 
     $mode = 'grid';
 
     $image = 'new_products_content_widget_grid';
     $items = $block->getProductCollection()->getItems();
+
     $showWishlist = true;
     $showCompare = true;
     $showCart = true;
     $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
     $description = false;
+
+    function getTextAttributes($attributeName, $value, $unit)
+    {
+        $htmlstr =   '<div class="product name product-item-' . $attributeName . '">' .
+            $value . ' ' . $unit .
+            '</div>';
+        return $htmlstr;
+    }
+
+
     ?>
-    <div class="block widget block-products-list <?= /* @noEscape */ $mode ?>">
+    <div class="feature block widget block-products-list <?= /* @noEscape */ $mode ?>">
         <?php if ($block->getTitle()) : ?>
             <div class="block-title">
                 <strong><?= $block->escapeHtml(__($block->getTitle())) ?></strong>
@@ -35,17 +52,101 @@ use Magento\Framework\App\Action\Action;
                 <ol class="product-items <?= /* @noEscape */ $type ?>">
                     <?php $iterator = 1; ?>
                     <?php foreach ($items as $_item) : ?>
-                        <?= /* @noEscape */ ($iterator++ == 1) ? '<li class="product-item">' : '</li><li class="product-item">' ?>
+                        <?= /* @noEscape */ ($iterator++ == 1) ? '<li class="product-item ">' : '</li><li class="product-item ">' ?>
                         <div class="product-item-info">
                             <!-- <a href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>" class="product-item-photo">
                                 <?= $block->getImage($_item, $image)->toHtml() ?>
-                            </a> -->
+                            </a>  -->
                             <div class="product-item-details">
-                                <strong class="product-item-name">
+                                <h3 class="product-item-name">
                                     <a title="<?= $block->escapeHtml($_item->getName()) ?>" href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>" class="product-item-link">
                                         <?= $block->escapeHtml($_item->getName()) ?>
                                     </a>
-                                </strong>
+                                </h3>
+
+                                <?php
+
+                                // var_dump($_item->getData());
+
+
+
+                                ?>
+
+                                <?php
+
+                                ?>
+                                <div class="product name product-item-SsdStorage">
+                                    <?= $block->escapeHtmlAttr($_item->getssd_storage()) . ' GB ' . $_item->getResource()->getAttribute('ssd_storage')->getFrontend()->getLabel($_item)?>
+                                </div>
+                                <div class="product name product-item-MonthlyDataTransfer">
+                                    <?= $block->escapeHtmlAttr($_item->getmonthly_data_transfer()) . ' GB ' . $_item->getResource()->getAttribute('monthly_data_transfer')->getFrontend()->getLabel($_item) ?>
+                                </div>
+                                <div class="product name product-item-AddonDomain">
+                                    <?= $block->escapeHtmlAttr($_item->getaddon_domain()). ' ' . $_item->getResource()->getAttribute('addon_domain')->getFrontend()->getLabel($_item) ?>
+                                </div>
+
+
+                                <?php
+                                if ($block->escapeHtmlAttr($_item->getlitespeed_web_server())) { ?>
+                                    <div class="product name product-item-LitespeedWebServer">
+                                        <?php echo   $block->escapeHtmlAttr($_item->getResource()->getAttribute('litespeed_web_server')->getFrontend()->getLabel($_item)); ?>
+                                    </div>
+                                <?php
+                                }
+                                ?>
+
+                                <?php
+                                if ($block->escapeHtmlAttr($_item->getcpanel_control_panel())) { ?>
+                                    <div class="product name product-item-CpanelControlPanel">
+                                        <?php echo   $block->escapeHtmlAttr($_item->getResource()->getAttribute('cpanel_control_panel')->getFrontend()->getLabel($_item)); ?>
+                                    </div>
+                                <?php
+                                }
+                                ?>
+                                <?php
+                                if ($block->escapeHtmlAttr($_item->getfree_ssl_life_time())) { ?>
+                                    <div class="product name product-item-FreeSslLifeTime">
+                                        <?php echo   $block->escapeHtmlAttr($_item->getResource()->getAttribute('free_ssl_life_time')->getFrontend()->getLabel($_item)); ?>
+                                    </div>
+                                <?php
+                                }
+                                ?>
+
+                                <?php
+                                if ($block->escapeHtmlAttr($_item->getfree_weekly_backup())) { ?>
+                                    <div class="product name product-item-FreeWeeklyBackup">
+                                        <?php echo   $block->escapeHtmlAttr($_item->getResource()->getAttribute('free_weekly_backup')->getFrontend()->getLabel($_item)); ?>
+                                    </div>
+                                <?php
+                                }
+                                ?>
+                                <?php
+                                if ($block->escapeHtmlAttr($_item->getunlimited_sub_domains())) { ?>
+                                    <div class="product name product-item-UnlimitedSubDomains">
+                                        <?php echo   $block->escapeHtmlAttr($_item->getResource()->getAttribute('unlimited_sub_domains')->getFrontend()->getLabel($_item)); ?>
+                                    </div>
+                                <?php
+                                }
+                                ?>
+                                <?php
+                                if ($block->escapeHtmlAttr($_item->getunlimited_email_account())) { ?>
+                                    <div class="product name product-item-UnlimitedEmailAccounts">
+                                        <?php echo   $block->escapeHtmlAttr($_item->getResource()->getAttribute('unlimited_email_account')->getFrontend()->getLabel($_item)); ?>
+                                    </div>
+                                <?php
+                                }
+                                ?>
+                                <?php
+                                if ($block->escapeHtmlAttr($_item->getunlimited_databases())) { ?>
+                                    <div class="product name product-item-UnlimitedDatabases">
+                                        <?php echo   $block->escapeHtmlAttr($_item->getResource()->getAttribute('unlimited_databases')->getFrontend()->getLabel($_item)); ?>
+                                    </div>
+                                <?php
+                                }
+                                ?>
+
+
+
                                 <?php if ($templateType) : ?>
                                     <?= $block->getReviewsSummaryHtml($_item, $templateType) ?>
                                 <?php endif; ?>
@@ -106,3 +207,12 @@ use Magento\Framework\App\Action\Action;
         </div>
     </div>
 <?php endif; ?>
+
+
+<script type="text/x-magento-init">
+    {
+        "[data-role=tocart-form], .form.map.checkout": {
+            "catalogAddToCart": {}
+        }
+    }
+</script>
