@@ -1,10 +1,53 @@
+@import 'module/_listings.less';
+
 & when (@media-common =true) {
 
-    .product {
-        border-bottom: 1px solid #24b540;
-        margin: 10px;
-        text-align: center;
+
+    .feature {
+
+        .block-title {
+            color: @theme-color;
+            text-transform: uppercase;
+            padding: 10px;
+        }
+
+
+        .product-items {
+
+            text-align: center;
+
+            .product-item {
+
+
+                .product-item-info {
+                    background: white;
+
+                    border-radius: 20px;
+                    border: 1px solid silver;
+                    padding: 25px 15px;
+                    margin-top: 25px;
+                    box-shadow: 5px 10px #88888850;
+
+                    .product-item-details {
+
+                        .product-item-name {
+                            text-transform: uppercase;
+                            font-weight: 700;
+                            padding: 10px;
+                        }
+
+                        .product {
+                            border-bottom: 1px solid #24b540;
+                            text-align: center;
+                            padding: 10px;
+                        }
+                    }
+
+                }
+            }
+
+
+
+        }
     }
-
-
 }

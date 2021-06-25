@@ -32,15 +32,15 @@ use Magento\InventoryLowQuantityNotification\Model\ResourceModel\SourceItemConfi
 
     function getTextAttributes($attributeName, $value, $unit)
     {
-        $htmlstr =   '<div class="product name product-item-'. $attributeName . '">' .
-                    $value. ' ' . $unit .
-                    '</div>';
+        $htmlstr =   '<div class="product name product-item-' . $attributeName . '">' .
+            $value . ' ' . $unit .
+            '</div>';
         return $htmlstr;
     }
 
 
     ?>
-    <div class="block widget block-products-list <?= /* @noEscape */ $mode ?>">
+    <div class="feature block widget block-products-list <?= /* @noEscape */ $mode ?>">
         <?php if ($block->getTitle()) : ?>
             <div class="block-title">
                 <strong><?= $block->escapeHtml(__($block->getTitle())) ?></strong>
@@ -52,47 +52,99 @@ use Magento\InventoryLowQuantityNotification\Model\ResourceModel\SourceItemConfi
                 <ol class="product-items <?= /* @noEscape */ $type ?>">
                     <?php $iterator = 1; ?>
                     <?php foreach ($items as $_item) : ?>
-                        <?= /* @noEscape */ ($iterator++ == 1) ? '<li class="product-item">' : '</li><li class="product-item">' ?>
+                        <?= /* @noEscape */ ($iterator++ == 1) ? '<li class="product-item ">' : '</li><li class="product-item ">' ?>
                         <div class="product-item-info">
                             <!-- <a href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>" class="product-item-photo">
                                 <?= $block->getImage($_item, $image)->toHtml() ?>
                             </a>  -->
                             <div class="product-item-details">
-                                <strong class="product-item-name">
+                                <h3 class="product-item-name">
                                     <a title="<?= $block->escapeHtml($_item->getName()) ?>" href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>" class="product-item-link">
                                         <?= $block->escapeHtml($_item->getName()) ?>
                                     </a>
-                                </strong>
-                                <?= getTextAttributes( 'ssd_storage',$block->escapeHtmlAttr($_item->getssd_storage()) , "GB" ); ?>
-                                <?= getTextAttributes( 'monthly_data_transfer',$block->escapeHtmlAttr($_item->getmonthly_data_transfer()) , "GB" ); ?>
-                                <?= getTextAttributes( 'addon_domain',$block->escapeHtmlAttr($_item->getaddon_domain()) , "GB" ); ?>
+                                </h3>
+
+                                <?php
+
+                                // var_dump($_item->getData());
 
 
-                                <!-- <div class="product name product-item-SsdStorage">
-                                    <?= $block->escapeHtmlAttr($_item->getssd_storage()) ?>
+
+                                ?>
+
+                                <?php
+
+                                ?>
+                                <div class="product name product-item-SsdStorage">
+                                    <?= $block->escapeHtmlAttr($_item->getssd_storage()) . ' GB ' . $_item->getResource()->getAttribute('ssd_storage')->getFrontend()->getLabel($_item)?>
                                 </div>
                                 <div class="product name product-item-MonthlyDataTransfer">
-                                    <?= $block->escapeHtmlAttr($_item->getmonthly_data_transfer()) ?>
+                                    <?= $block->escapeHtmlAttr($_item->getmonthly_data_transfer()) . ' GB ' . $_item->getResource()->getAttribute('monthly_data_transfer')->getFrontend()->getLabel($_item) ?>
                                 </div>
                                 <div class="product name product-item-AddonDomain">
-                                    <?= $block->escapeHtmlAttr($_item->getaddon_domain()) ?>
+                                    <?= $block->escapeHtmlAttr($_item->getaddon_domain()). ' ' . $_item->getResource()->getAttribute('addon_domain')->getFrontend()->getLabel($_item) ?>
                                 </div>
-                                <div class="product name product-item-LitespeedWebServer">
-                                    <?php if ($block->escapeHtmlAttr($_item->getlitespeed_web_server())) { ?>
-                                    <?= $block->escapeHtmlAttr($_item->getResource()->getAttribute('litespeed_web_server')->getFrontend()->getLabel($_item));
-                                    } else {
-                                        continue;
-                                    }
-                                    ?>
-                                </div>
-                                <div class="product name product-item-CpanelControlPanel">
-                                    <?php if ($block->escapeHtmlAttr($_item->getcpanel_control_panel())) { ?>
-                                    <?= $block->escapeHtmlAttr($_item->getResource()->getAttribute('cpanel_control_panel')->getFrontend()->getLabel($_item));
-                                    } else {
-                                        continue;
-                                    }
-                                    ?>
-                                </div> -->
+
+
+                                <?php
+                                if ($block->escapeHtmlAttr($_item->getlitespeed_web_server())) { ?>
+                                    <div class="product name product-item-LitespeedWebServer">
+                                        <?php echo   $block->escapeHtmlAttr($_item->getResource()->getAttribute('litespeed_web_server')->getFrontend()->getLabel($_item)); ?>
+                                    </div>
+                                <?php
+                                }
+                                ?>
+
+                                <?php
+                                if ($block->escapeHtmlAttr($_item->getcpanel_control_panel())) { ?>
+                                    <div class="product name product-item-CpanelControlPanel">
+                                        <?php echo   $block->escapeHtmlAttr($_item->getResource()->getAttribute('cpanel_control_panel')->getFrontend()->getLabel($_item)); ?>
+                                    </div>
+                                <?php
+                                }
+                                ?>
+                                <?php
+                                if ($block->escapeHtmlAttr($_item->getfree_ssl_life_time())) { ?>
+                                    <div class="product name product-item-FreeSslLifeTime">
+                                        <?php echo   $block->escapeHtmlAttr($_item->getResource()->getAttribute('free_ssl_life_time')->getFrontend()->getLabel($_item)); ?>
+                                    </div>
+                                <?php
+                                }
+                                ?>
+
+                                <?php
+                                if ($block->escapeHtmlAttr($_item->getfree_weekly_backup())) { ?>
+                                    <div class="product name product-item-FreeWeeklyBackup">
+                                        <?php echo   $block->escapeHtmlAttr($_item->getResource()->getAttribute('free_weekly_backup')->getFrontend()->getLabel($_item)); ?>
+                                    </div>
+                                <?php
+                                }
+                                ?>
+                                <?php
+                                if ($block->escapeHtmlAttr($_item->getunlimited_sub_domains())) { ?>
+                                    <div class="product name product-item-UnlimitedSubDomains">
+                                        <?php echo   $block->escapeHtmlAttr($_item->getResource()->getAttribute('unlimited_sub_domains')->getFrontend()->getLabel($_item)); ?>
+                                    </div>
+                                <?php
+                                }
+                                ?>
+                                <?php
+                                if ($block->escapeHtmlAttr($_item->getunlimited_email_account())) { ?>
+                                    <div class="product name product-item-UnlimitedEmailAccounts">
+                                        <?php echo   $block->escapeHtmlAttr($_item->getResource()->getAttribute('unlimited_email_account')->getFrontend()->getLabel($_item)); ?>
+                                    </div>
+                                <?php
+                                }
+                                ?>
+                                <?php
+                                if ($block->escapeHtmlAttr($_item->getunlimited_databases())) { ?>
+                                    <div class="product name product-item-UnlimitedDatabases">
+                                        <?php echo   $block->escapeHtmlAttr($_item->getResource()->getAttribute('unlimited_databases')->getFrontend()->getLabel($_item)); ?>
+                                    </div>
+                                <?php
+                                }
+                                ?>
+
 
 
                                 <?php if ($templateType) : ?>
@@ -155,3 +207,12 @@ use Magento\InventoryLowQuantityNotification\Model\ResourceModel\SourceItemConfi
         </div>
     </div>
 <?php endif; ?>
+
+
+<script type="text/x-magento-init">
+    {
+        "[data-role=tocart-form], .form.map.checkout": {
+            "catalogAddToCart": {}
+        }
+    }
+</script>
