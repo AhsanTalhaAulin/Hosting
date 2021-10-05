@@ -1,12 +1,18 @@
 {
-    "name": "harriswebworks/magento2-module-add-to-cart-notification",
-    "description": "",
-    "license": "MIT",
+    "name": "harriswebworks/add-to-cart-notification",
+    "description": "Harriswebworks AddToCartNotification for Magento 2",
+    "type": "magento2-module",
+    "version": "0.0.1",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "homepage": "https://www.harriswebworks.com",
     "require": {
+        "harriswebworks/module-core": ">=0.1.0",
         "magento/module-catalog": "*",
         "magento/module-checkout": "*"
     },
-    "type": "magento2-module",
     "autoload": {
         "files": [
             "registration.php"

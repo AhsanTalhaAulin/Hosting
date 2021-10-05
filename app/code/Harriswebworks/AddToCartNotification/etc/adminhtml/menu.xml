@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Harriswebworks_AddToCartNotification::add_to_cart_notification" title="AddToCartNotification" module="Harriswebworks_AddToCartNotification" sortOrder="10" parent="Harriswebworks_Core::all" resource="Harriswebworks_AddToCartNotification::add_to_cart_notification"/>
+        <add id="Harriswebworks_AddToCartNotification::popup" title="Configuration" module="Harriswebworks_AddToCartNotification" sortOrder="10" parent="Harriswebworks_AddToCartNotification::add_to_cart_notification" action="adminhtml/system_config/edit/section/popup/add_to_cart_notification" dependsOnModule="Harriswebworks_Core" resource="Harriswebworks_AddToCartNotification::popup"/>
+    </menu>
+</config>

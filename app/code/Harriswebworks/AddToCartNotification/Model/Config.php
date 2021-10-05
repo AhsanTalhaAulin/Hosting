@@ -9,9 +9,10 @@ use Magento\Store\Model\ScopeInterface;
 
 class Config
 {
-    const CONFIG_PATH_ENABLED = 'checkout/add_to_cart_notification/enabled';
-    const CONFIG_PATH_DISABLE_DEFAULT_NOTIFICATION = 'checkout/add_to_cart_notification/disable_default_notification';
-    const CONFIG_PATH_NOTIFICATION_LIFETIME = 'checkout/add_to_cart_notification/notification_lifetime';
+    const CONFIG_PATH_ENABLED = 'popup/add_to_cart_notification/enabled';
+    const CONFIG_PATH_DISABLE_DEFAULT_NOTIFICATION = 'popup/add_to_cart_notification/disable_default_notification';
+    const CONFIG_PATH_NOTIFICATION_LIFETIME = 'popup/add_to_cart_notification/notification_lifetime';
+    const CONFIG_PATH_NOTIFICATION_TEMPLATE = 'popup/add_to_cart_notification/notification_template';
     /**
      * @var ScopeConfigInterface
      */
@@ -62,6 +63,20 @@ class Config
     {
         return (int) $this->scopeConfig->getValue(
             self::CONFIG_PATH_NOTIFICATION_LIFETIME,
+            ScopeInterface::SCOPE_STORES,
+            $scopeCode
+        );
+    }
+    /**
+     * Returns the lifetime of notification in milliseconds.
+     *
+     * @param null|string $scopeCode
+     * @return int
+     */
+    public function getNotificationTemplate($scopeCode = null): int
+    {
+        return (int) $this->scopeConfig->getValue(
+            self::CONFIG_PATH_NOTIFICATION_TEMPLATE,
             ScopeInterface::SCOPE_STORES,
             $scopeCode
         );

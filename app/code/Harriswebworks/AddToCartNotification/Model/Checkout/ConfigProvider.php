@@ -29,7 +29,8 @@ class ConfigProvider implements ConfigProviderInterface
         return [
             'add_to_cart_notification' => [
                 'enabled' => $this->config->isEnabled(),
-                'notificationLifetime' => $this->config->getNotificationLifetime()
+                'notificationLifetime' => $this->config->getNotificationLifetime(),
+                'notificationTemplate' => $this->config->getNotificationTemplate()
             ]
         ];
     }

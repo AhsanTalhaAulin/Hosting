@@ -9,4 +9,5 @@
             type="Harriswebworks\AddToCartNotification\Plugin\Controller\Cart\AddPlugin"
         />
     </type>
+    <preference for="Magento\CatalogWidget\Block\Product\ProductsList" type="Harriswebworks\AddToCartNotification\Block\Product\ProductsList" />
 </config>

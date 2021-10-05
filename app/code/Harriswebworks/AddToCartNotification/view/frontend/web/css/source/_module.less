@@ -7,7 +7,7 @@
 
 & when (@media-common = true) {
     .modal-added-to-cart {
-        z-index: 9;
+        z-index: 9999;
         position: fixed;
         top: 0;
         right: 0;
@@ -31,7 +31,123 @@
             width: 50px;
             margin-right: 1em;
         }
+    } 
+
+
+    .jGrowl {
+        z-index: 9999;
+        color: #fff;
+        font-size: 12px;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        position: fixed
     }
+    .jGrowl.top-left {
+        left: 0;
+        top: 0
+    }
+    .jGrowl.top-right {
+        right: 0;
+        top: 0
+    }
+    .jGrowl.bottom-left {
+        left: 0;
+        bottom: 0
+    }
+    .jGrowl.bottom-right {
+        right: 0;
+        bottom: 0
+    }
+    .jGrowl.center {
+        top: 0;
+        width: 50%;
+        left: 25%
+    }
+    .jGrowl.center .jGrowl-closer, .jGrowl.center .jGrowl-notification {
+        margin-left: auto;
+        margin-right: auto
+    }
+    .jGrowl-notification {
+        background-color: #9b2226;
+        opacity: .9;
+        zoom: 1;
+        width: 270px;
+        padding: 10px;
+        margin: 10px;
+        text-align: center;
+        display: none;
+        border-radius: 5px;
+        min-height: 40px;
+        p{
+            text-align: left;  
+        }
+        a{
+            color: #fffce2;
+        }
+        .primary{
+            font-size: 1.1rem; 
+            padding: 5px 10px;
+            background: #fffdee;
+            border: 1px solid #52c234;
+            color: #2a452a;
+            &:hover{
+                background: #fff;
+                border: 1px solid #52c234;
+                color: #2a452a;
+            }
+        }
+    }
+    .jGrowl-notification .ui-state-highlight, .jGrowl-notification .ui-widget-content .ui-state-highlight, .jGrowl-notification .ui-widget-header .ui-state-highlight {
+        border: 1px solid #000;
+        background: #000;
+        color: #fff
+    }
+    .jGrowl-notification .jGrowl-header {
+        font-weight: 700;
+        font-size: .85em
+    }
+    .jGrowl-notification .jGrowl-close {
+        background-color: transparent;
+        color: inherit;
+        border: none;
+        z-index: 99;
+        float: right;
+        font-weight: 700;
+        font-size: 2em;
+        padding: 5px;
+        margin-top: -10px;
+        margin-right: -8px;
+        cursor: pointer
+    }
+    .jGrowl-closer {
+        background-color: #000;
+        opacity: .9;
+        zoom: 1;
+        width: 250px;
+        padding: 10px;
+        margin: 10px;
+        text-align: left;
+        display: none;
+        border-radius: 5px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        cursor: pointer;
+        font-size: .9em;
+        font-weight: 700;
+        text-align: center
+    }
+    .jGrowl-closer .ui-state-highlight, .jGrowl-closer .ui-widget-content .ui-state-highlight, .jGrowl-closer .ui-widget-header .ui-state-highlight {
+        border: 1px solid #000;
+        background: #000;
+        color: #fff
+    }
+
+    @media print {
+        .jGrowl {
+            display: none
+        }
+    }
+
+
 
     .message.message-add-to-cart {
         padding: @message__padding;
@@ -43,8 +159,8 @@
 }
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
-    .modal-added-to-cart {
+    /* .modal-added-to-cart {
         top: @modal-added-to-cart-offset;
-    }
+    } */
 }
 

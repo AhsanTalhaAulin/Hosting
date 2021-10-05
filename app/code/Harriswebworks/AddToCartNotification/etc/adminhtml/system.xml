@@ -2,7 +2,10 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <section id="checkout">
+        <section id="popup" translate="label" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>AddToCartNotification</label>
+            <tab>harriswebworks</tab>
+            <resource>Harriswebworks_AddToCartNotification::add_to_cart_notification</resource>
             <group
                 id="add_to_cart_notification"
                 sortOrder="100"
@@ -47,6 +50,19 @@
                     <label>Lifetime of notification</label>
                     <validate>validate-number validate-zero-or-greater</validate>
                     <comment>Lifetime in milliseconds</comment>
+                </field>
+                <field
+                    id="notification_template"
+                    type="select"
+                    translate="label"
+                    sortOrder="40"
+                    showInDefault="1"
+                    showInWebsite="1"
+                    showInStore="1"
+                    canRestore="1">
+                    <label>Notification Template</label>
+                    <source_model>Harriswebworks\AddToCartNotification\Model\Config\Source\NotificationTemplate</source_model>
+                    <comment>Select template to show notification on Magento Modal or Sticky Notification.</comment>
                 </field>
             </group>
         </section>
